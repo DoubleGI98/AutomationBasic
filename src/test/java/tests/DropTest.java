@@ -1,34 +1,32 @@
+package tests;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
+
+public class DropTest extends BaseTest{
 
 
-public class DropTest {
-
-    WebDriver driver;
 
     @Test
     public void DroppableTest(){
-        openBrowser();
+
         choseMenu();
         choseSubMenu();
         pickAndDropElement();
     }
 
-    public void openBrowser() {
-        driver = new ChromeDriver();
-        driver.get("https://demoqa.com/");
-        driver.manage().window().maximize();
-    }
+//    public void openBrowser() {
+//        driver = new ChromeDriver();
+//        driver.get("https://demoqa.com/");
+//        driver.manage().window().maximize();
+//    }
 
     public void choseMenu() {
         WebElement interactionMenu = driver.findElement(By.xpath("//h5[text()='Interactions']"));

@@ -1,3 +1,5 @@
+package tests;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -8,8 +10,8 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class WebTableTest {
-    WebDriver driver;
+public class WebTableTest extends BaseTest{
+
     public int initialTableSize = 0;
     String firstName = "Nasturel";
     String lastName = "Firicel";
@@ -20,7 +22,6 @@ public class WebTableTest {
 
     @Test
     public void webTableTest(){
-        openBrowser();
         chooseMenu();
         chooseSubmeniu();
         getTableSize();
@@ -31,13 +32,13 @@ public class WebTableTest {
     }
 
     // Facem o metoda care deschide un browser
-    public void openBrowser(){
-        driver = new ChromeDriver();
-        //Navigam catre pagina website-ului
-        driver.get("https://demoqa.com/");
-        // Facem fereastra browser-ului maximize
-        driver.manage().window().maximize();
-    }
+//    public void openBrowser(){
+//        driver = new ChromeDriver();
+//        //Navigam catre pagina website-ului
+//        driver.get("https://demoqa.com/");
+//        // Facem fereastra browser-ului maximize
+//        driver.manage().window().maximize();
+//    }
 
     // Facem o metoda care alege un meniu
     public void chooseMenu(){
