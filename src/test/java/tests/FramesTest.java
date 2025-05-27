@@ -1,3 +1,5 @@
+package tests;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -6,12 +8,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class FramesTest {
-    WebDriver driver;
+public class FramesTest extends BaseTest{
+
 
     @Test
     public void FrameTest(){
-        openBrowser();
+
         choseMenu();
         choseSubMenu();
         interactWithFrameOne();
@@ -19,11 +21,11 @@ public class FramesTest {
         //closeBrowser();
 
     }
-    public void openBrowser() {
-        driver = new ChromeDriver();
-        driver.get("https://demoqa.com/");
-        driver.manage().window().maximize();
-    }
+//    public void openBrowser() {
+//        driver = new ChromeDriver();
+//        driver.get("https://demoqa.com/");
+//        driver.manage().window().maximize();
+//    }
 
     public void choseMenu() {
         WebElement elementsMenu = driver.findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
@@ -41,9 +43,9 @@ public class FramesTest {
         webTableSubMenu.click();
     }
 
-    public void closeBrowser(){
-        driver.quit();
-    }
+//    public void closeBrowser(){
+//        driver.quit();
+//    }
 
     public void interactWithFrameOne(){
         WebElement frameOneElement = driver.findElement(By.id("frame1"));

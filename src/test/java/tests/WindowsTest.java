@@ -1,3 +1,5 @@
+package tests;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -9,13 +11,13 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WindowsTest {
+public class WindowsTest extends BaseTest{
 
-    WebDriver driver;
+
 
     @Test
     public void WindowsTest() {
-        openBrowser();
+
         choseMenu();
         choseSubMenu();
         interactWithNewTab();
@@ -25,11 +27,11 @@ public class WindowsTest {
 
     }
 
-    public void openBrowser() {
-        driver = new ChromeDriver();
-        driver.get("https://demoqa.com/");
-        driver.manage().window().maximize();
-    }
+//    public void openBrowser() {
+//        driver = new ChromeDriver();
+//        driver.get("https://demoqa.com/");
+//        driver.manage().window().maximize();
+//    }
 
     public void choseMenu() {
         WebElement elementsMenu = driver.findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
