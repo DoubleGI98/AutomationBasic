@@ -10,24 +10,39 @@ public class HomePage extends BasePage{
 
     // Locatori specifici paginii;
 
-    private By alertsWindowsAndFramesMenu = By.xpath("//h5[text()='Alerts, Frame & Windows']");
+
     private By pageTitle=By.xpath("//img[@alt='Selenium Online Training']");
+    private By menuListLocator = By.xpath("//h5");
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
-    public void choseMenu(){
-        scrollIntoElement(driver.findElement(alertsWindowsAndFramesMenu));
-        driver.findElement(alertsWindowsAndFramesMenu).click();
-    }
 
-    public void scrollIntoElement(WebElement element){
+
+//    public void scrollIntoElement(WebElement element){
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("arguments[0].scrollIntoView(true);", element);
+//    }
+
+    public void scrollPageDown(){
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true);", element);
+        js.executeScript("window.scrollBy(0,400)");
     }
 
     @Override
     public void isPageLoaded() {
         Assert.assertEquals(driver.findElement(pageTitle).getDomAttribute("alt"),"Selenium Online Training","Page is not loaded properly");
     }
+
+    public void goToDesireMenu(String menuValue){
+        scrollPageDown();
+        for(WebElement menuName : driver.findElements(menuListLocator)){
+            if (menuName.getText().equals(menuValue)){
+                menuName.click();
+                break;
+            }
+        }
+
+    }
+
 }
