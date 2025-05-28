@@ -23,10 +23,10 @@ public class AlertsTest extends BaseTest{
     public void alertsTest(){
         HomePage homePage = new HomePage(driver);
         homePage.isPageLoaded();
-        homePage.choseMenu();
+        homePage.goToDesireMenu("Alerts, Frame & Windows");
         CommonPage commonPage = new CommonPage(driver);
         commonPage.isPageLoaded();
-        commonPage.choseSubMenu();
+        commonPage.goToDesireSubMenu("Alerts");
         AlertsPage alertsPage = new AlertsPage(driver);
         alertsPage.isPageLoaded();
         alertsPage.interactWithFirstAlert();

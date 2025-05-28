@@ -7,8 +7,7 @@ import org.testng.Assert;
 
 public class CommonPage extends BasePage{
     // locatori specifici paginii;
-    private By alertsSubMenu = By.xpath("//span[text()='Alerts']");
-
+    private By subMenuListLocator = By.xpath("//span[@class='text']");
 
     public CommonPage(WebDriver driver) {
         super(driver);
@@ -20,9 +19,15 @@ public class CommonPage extends BasePage{
         Assert.assertEquals(driver.getTitle(),"DEMOQA","Page is not loaded properly");
     }
 
-    public void choseSubMenu(){
 
-        driver.findElement(alertsSubMenu).click();
+
+    public void goToDesireSubMenu(String subMenuValue){
+        for(WebElement subMenuName : driver.findElements(subMenuListLocator)){
+            if (subMenuName.getText().equals(subMenuValue)){
+                subMenuName.click();
+            }
+        }
+
     }
 
 }
