@@ -8,41 +8,30 @@ import org.testng.Assert;
 
 public class HomePage extends BasePage{
 
-    // Locatori specifici paginii;
+    //locatori specifici paginii;
+    private By pageTitle= By.xpath("//img[@alt='Selenium Online Training']");
+    private By menuListLocator= By.xpath("//h5");
 
-
-    private By pageTitle=By.xpath("//img[@alt='Selenium Online Training']");
-    private By menuListLocator = By.xpath("//h5");
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
 
 
-//    public void scrollIntoElement(WebElement element){
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        js.executeScript("arguments[0].scrollIntoView(true);", element);
-//    }
 
-    public void scrollPageDown(){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,400)");
-    }
+
 
     @Override
     public void isPageLoaded() {
-        Assert.assertEquals(driver.findElement(pageTitle).getDomAttribute("alt"),"Selenium Online Training","Page is not loaded properly");
+        Assert.assertEquals(elementMethods.getElement(pageTitle).getDomAttribute("alt"),
+                "Selenium Online Training","Page is not loaded properly");
     }
 
-    public void goToDesireMenu(String menuValue){
-        scrollPageDown();
-        for(WebElement menuName : driver.findElements(menuListLocator)){
-            if (menuName.getText().equals(menuValue)){
-                menuName.click();
-                break;
-            }
-        }
+    public void goToDesiredMenu(String menuValue) {
+        elementMethods.scrollPageDown("400");
+        elementMethods.chooseElementFromListByText(menuListLocator,menuValue);
+
+
 
     }
-
 }

@@ -22,11 +22,8 @@ public class CommonPage extends BasePage{
 
 
     public void goToDesireSubMenu(String subMenuValue){
-        for(WebElement subMenuName : driver.findElements(subMenuListLocator)){
-            if (subMenuName.getText().equals(subMenuValue)){
-                subMenuName.click();
-            }
-        }
+        elementMethods.scrollPageDown("500");
+        elementMethods.chooseElementFromListByText(subMenuListLocator, subMenuValue);
 
     }
 
