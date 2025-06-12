@@ -12,6 +12,7 @@ import pages.HomePage;
 
 import java.time.Duration;
 
+import static constants.MenuConstants.ALERTS_FRAMES_WINDOWS_MENU;
 import static org.testng.AssertJUnit.assertTrue;
 
 
@@ -23,7 +24,7 @@ public class AlertsTest extends BaseTest{
     public void alertsTest(){
         HomePage homePage = new HomePage(driver);
         homePage.isPageLoaded();
-        homePage.goToDesireMenu("Alerts, Frame & Windows");
+        homePage.goToDesiredMenu(ALERTS_FRAMES_WINDOWS_MENU);
         CommonPage commonPage = new CommonPage(driver);
         commonPage.isPageLoaded();
         commonPage.goToDesireSubMenu("Alerts");

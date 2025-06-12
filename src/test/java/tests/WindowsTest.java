@@ -23,7 +23,7 @@ public class WindowsTest extends BaseTest{
         interactWithNewTab();
         interactWithNewWindow();
         interactWithNewWindowMessage();
-        //closeBrowser();
+        closeBrowser();
 
     }
 

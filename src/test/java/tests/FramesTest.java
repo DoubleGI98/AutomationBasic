@@ -11,6 +11,8 @@ import pages.CommonPage;
 import pages.FramesPage;
 import pages.HomePage;
 
+import static constants.MenuConstants.ALERTS_FRAMES_WINDOWS_MENU;
+
 public class FramesTest extends BaseTest{
 
 
@@ -18,7 +20,7 @@ public class FramesTest extends BaseTest{
     public void FrameTest(){
         HomePage homePage = new HomePage(driver);
         homePage.isPageLoaded();
-        homePage.goToDesireMenu("Alerts, Frame & Windows");
+        homePage.goToDesiredMenu(ALERTS_FRAMES_WINDOWS_MENU);
         CommonPage commonPage = new CommonPage(driver);
         commonPage.isPageLoaded();
         commonPage.goToDesireSubMenu("Frames");
