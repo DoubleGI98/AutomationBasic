@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.util.List;
+import java.util.Map;
 
 public class WebTablePage extends BasePage {
     //locatori specifici;
@@ -60,18 +61,18 @@ public class WebTablePage extends BasePage {
 
     //facem o metoda care sa completeze toate campurile din formular;
 
-    public void fillFormValues() {
-        elementMethods.fillElement(firstNameField,firstName);
-        elementMethods.fillElement(lastNameField,lastName);
-        elementMethods.fillElement(emailAddressField,email);
-        elementMethods.fillElement(ageField,age);
-        elementMethods.fillElement(salaryField,salary);
-        elementMethods.fillElement(departmentField,department);
+    public void fillFormValues(Map<String,Object> webTableEntryData) {
+        elementMethods.fillElement(firstNameField,(String) webTableEntryData.get("firstName"));
+        elementMethods.fillElement(lastNameField,(String) webTableEntryData.get("LastName"));
+        elementMethods.fillElement(emailAddressField,(String) webTableEntryData.get("email"));
+        elementMethods.fillElement(ageField,(String) webTableEntryData.get("age"));
+        elementMethods.fillElement(salaryField,(String) webTableEntryData.get("salary"));
+        elementMethods.fillElement(departmentField,(String) webTableEntryData.get());
         elementMethods.clickElement(submitButtonField);
     }
 
     //facem o metoda care sa valideze ca am adaugat o intrare noua in tabel si sa verifice valorile pe care le-am dat;
-    public void validateThatNewRecordsAreAddedProperly() {
+    public void validateThatNewRecordsAreAddedProperly(Map<String,Object>webTableEntryData) {
         Assert.assertTrue(elementMethods.getElements(tableRowList).size() > initialTableSize, "There are no new entries in the table!, initial table size: " +
                 initialTableSize + " is the same with actual table size: " + elementMethods.getElements(tableRowList).size());
         String actualTableValues = elementMethods.getElements(tableRowList).get(elementMethods.getElements(tableRowList).size() - 1).getText();

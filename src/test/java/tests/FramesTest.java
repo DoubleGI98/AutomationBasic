@@ -12,6 +12,7 @@ import pages.FramesPage;
 import pages.HomePage;
 
 import static constants.MenuConstants.ALERTS_FRAMES_WINDOWS_MENU;
+import static constants.SubMenuConstants.FRAMES_SUBMENU;
 
 public class FramesTest extends BaseTest{
 
@@ -23,7 +24,7 @@ public class FramesTest extends BaseTest{
         homePage.goToDesiredMenu(ALERTS_FRAMES_WINDOWS_MENU);
         CommonPage commonPage = new CommonPage(driver);
         commonPage.isPageLoaded();
-        commonPage.goToDesireSubMenu("Frames");
+        commonPage.goToDesireSubMenu(FRAMES_SUBMENU);
         FramesPage framesPage = new FramesPage(driver);
         framesPage.interactWithFrameOne();
         framesPage.interactWithFrameTwo();

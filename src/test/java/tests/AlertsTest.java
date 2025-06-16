@@ -9,6 +9,8 @@ import org.testng.annotations.Test;
 import pages.AlertsPage;
 import pages.CommonPage;
 import pages.HomePage;
+import static constants.MenuConstants.ALERTS_FRAMES_WINDOWS_MENU;
+import static constants.SubMenuConstants.ALERTS_SUBMENU;
 
 import java.time.Duration;
 
@@ -27,7 +29,7 @@ public class AlertsTest extends BaseTest{
         homePage.goToDesiredMenu(ALERTS_FRAMES_WINDOWS_MENU);
         CommonPage commonPage = new CommonPage(driver);
         commonPage.isPageLoaded();
-        commonPage.goToDesireSubMenu("Alerts");
+        commonPage.goToDesireSubMenu(ALERTS_SUBMENU);
         AlertsPage alertsPage = new AlertsPage(driver);
         alertsPage.isPageLoaded();
         alertsPage.interactWithFirstAlert();
