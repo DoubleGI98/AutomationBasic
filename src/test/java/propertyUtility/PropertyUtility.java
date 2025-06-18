@@ -2,9 +2,7 @@ package propertyUtility;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 
 public class PropertyUtility {
     public Properties properties;
@@ -39,5 +37,14 @@ public class PropertyUtility {
         }
         return allProperties;
     }
+
+    public List<String> getPropertiesAsList(String key){
+        String value = getPropertyValue(key);
+        if(value != null && value.contains(",")){
+            return Arrays.asList(value.split(","));
+        }
+        return new ArrayList<>(List.of(value));
+    }
+
 }
 

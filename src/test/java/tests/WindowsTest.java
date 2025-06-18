@@ -1,9 +1,19 @@
 package tests;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CommonPage;
 import pages.HomePage;
 import pages.WindowsPage;
+import propertyUtility.PropertyUtility;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static constants.MenuConstants.ALERTS_FRAMES_WINDOWS_MENU;
 import static constants.SubMenuConstants.WINDOWS_SUBMENU;
@@ -12,21 +22,22 @@ public class WindowsTest extends BaseTest {
 
     @Test
     public void windowsTest() {
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage= new HomePage(driver);
         homePage.isPageLoaded();
         homePage.goToDesiredMenu(ALERTS_FRAMES_WINDOWS_MENU);
-        CommonPage commonPage = new CommonPage(driver);
+        CommonPage commonPage=new CommonPage(driver);
         commonPage.isPageLoaded();
-        commonPage.goToDesireSubMenu(WINDOWS_SUBMENU);
-        WindowsPage windowsPage = new WindowsPage(driver);
+        commonPage.goToDesireSubMenu(WINDOWS_SUBMENU );
+        WindowsPage windowsPage=new WindowsPage(driver);
+        propertyUtility= new PropertyUtility("WindowsTest");
         windowsPage.isPageLoaded();
-        windowsPage.interactWithNewTab();
-        windowsPage.interactWithNewWindow();
+        windowsPage.interactWithNewTab(propertyUtility.getPropertyValue("expectedText"));
+        windowsPage.interactWithNewWindow(propertyUtility.getPropertyValue("expectedText"));
         windowsPage.interactWithNewMessageWindow();
     }
 
-//    //VARIANTA BRUTA A TESTULUI
-//    //facem o metoda care deschide un browser;
+    //VARIANTA BRUTA A TESTULUI
+    //facem o metoda care deschide un browser;
 //    public void openBrowser() {
 //        driver = new ChromeDriver();
 //        // navigam catre pagine website-ului
@@ -34,8 +45,8 @@ public class WindowsTest extends BaseTest {
 //        //facem fereastra browser-ului maximize
 //        driver.manage().window().maximize();
 //    }
-//
-//    //facem o metoda care alege un meniu;
+    //facem o metoda care alege un meniu;
+
 //    public void chooseMenu() {
 //        //identificam meniul dorit si facem click pe el;
 //        WebElement alertsWindowsAndFramesMenu = driver.findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
@@ -44,8 +55,8 @@ public class WindowsTest extends BaseTest {
 //        scrollIntoElement(alertsWindowsAndFramesMenu);
 //        alertsWindowsAndFramesMenu.click();
 //    }
-//
 //    //facem o metoda care sa faca scroll;
+//
 //    public void scrollIntoElement(WebElement alertsMenu) {
 //        JavascriptExecutor js = (JavascriptExecutor) driver;
 //        js.executeScript("arguments[0].scrollIntoView(true);", alertsMenu);
@@ -57,7 +68,6 @@ public class WindowsTest extends BaseTest {
 //        WebElement alertsSubMenu = driver.findElement(By.xpath("//span[text()='Browser Windows']"));
 //        alertsSubMenu.click();
 //    }
-
 
 //    public void interactWithNewTab() {
 //        WebElement newTabButton = driver.findElement(By.id("tabButton"));
@@ -105,6 +115,6 @@ public class WindowsTest extends BaseTest {
 //        }
 //        driver.switchTo().window(windowsList.get(1));
 //        driver.close();
-//        driver.switchTo().window(windowsList.get(0));More actions
+//        driver.switchTo().window(windowsList.get(0));
 //    }
 }

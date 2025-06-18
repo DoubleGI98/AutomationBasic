@@ -33,10 +33,10 @@ public class PracticeFormTest extends BaseTest {
         commonPage.goToDesireSubMenu(PRACTICE_FORM_SUBMENU);
         PracticeFormPage practiceFormPage=new PracticeFormPage(driver);
         propertyUtility= new PropertyUtility("PracticeFormTest");
-        Map<String,Object>PracticeFormData=propertyUtility.getAllProperties();
+        Map<String,Object>practiceFormData=propertyUtility.getAllProperties();
         practiceFormPage.isPageLoaded();
-        practiceFormPage.fillEntireForm(PracticeFormData);
-        practiceFormPage.validateThatExpectedValuesEqualActualValues(PracticeFormData);
+        practiceFormPage.fillEntireForm(practiceFormData);
+        practiceFormPage.validateThatExpectedValuesEqualActualValues(practiceFormData);
 
 
 
