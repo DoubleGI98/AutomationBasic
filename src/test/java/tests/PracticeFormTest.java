@@ -24,19 +24,18 @@ public class PracticeFormTest extends BaseTest {
 
     @Test
     public void practiceFormTest() {
-
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage= new HomePage(driver);
         homePage.isPageLoaded();
         homePage.goToDesiredMenu(FORMS_MENU);
-        CommonPage commonPage = new CommonPage(driver);
+        CommonPage commonPage= new CommonPage(driver);
         commonPage.isPageLoaded();
         commonPage.goToDesireSubMenu(PRACTICE_FORM_SUBMENU);
         PracticeFormPage practiceFormPage=new PracticeFormPage(driver);
-        propertyUtility= new PropertyUtility("PracticeFormTest");
-        Map<String,Object>practiceFormData=propertyUtility.getAllProperties();
+        propertyUtility = new PropertyUtility("PracticeFormTest");
+        Map<String,Object> practiceFormTestData  = propertyUtility.getAllProperties();
         practiceFormPage.isPageLoaded();
-        practiceFormPage.fillEntireForm(practiceFormData);
-        practiceFormPage.validateThatExpectedValuesEqualActualValues(practiceFormData);
+        practiceFormPage.fillEntireForm(practiceFormTestData);
+        practiceFormPage.validateThatExpectedValuesEqualActualValues(practiceFormTestData);
 
 
 

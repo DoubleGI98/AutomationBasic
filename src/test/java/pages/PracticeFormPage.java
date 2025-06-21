@@ -36,24 +36,6 @@ public class PracticeFormPage extends BasePage {
     private By submitTableValuesLocator = By.xpath("//tbody//td[2]");
     private By hobbyElementLocator = By.xpath("//input[@type='checkbox' and @class='custom-control-input']");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public PracticeFormPage(WebDriver driver) {
         super(driver);
     }
@@ -83,36 +65,24 @@ public class PracticeFormPage extends BasePage {
         clickOnSubmitButton();
         getExpectedValues(practiceFormData);
         getActualValues();
-
-
-
-
-
     }
 
     public void fillFirstName(String firstNameValue) {
         elementMethods.fillElement(firstNameField,firstNameValue);
-
     }
 
     public void fillLastName(String lastNameValue) {
         elementMethods.fillElement(lastNameField,lastNameValue);
-
     }
 
     public void fillEmail(String emailValue) {
         elementMethods.fillElement(emailField,emailValue);
-
     }
 
     public void chooseGender(String genderValue) {
         List<WebElement> genderList = List.of(driver.findElement(genderMale),
                 driver.findElement(genderFemale), driver.findElement(genderOther));
         elementMethods.chooseElementFromListByText(genderList,genderValue);
-
-
-
-
     }
 
     public void fillPhoneNumber(String mobilePhoneValue) {
@@ -124,13 +94,6 @@ public class PracticeFormPage extends BasePage {
         elementMethods.selectElementByText(monthOfBirthLocator,monthValue);
         elementMethods.selectElementByText(yearOfBirthLocator,yearValue);
         elementMethods.chooseElementFromListByText(dayOfBirthListLocator,dayValue);
-
-
-
-
-
-
-
     }
 
     public void chooseSubjects(String mathSubjectValue, String physicsSubjectValue) {
@@ -146,16 +109,11 @@ public class PracticeFormPage extends BasePage {
         List<String> hobbyValueTextList = List.of(sportValue,readValue,musicValue);
         for(String hobby: hobbyValueTextList){
             elementMethods.chooseElementFromListByText(hobbiesList,hobby);
-
-
-
         }
     }
 
     public void uploadPicture(String pictureFileValue) {
         elementMethods.uploadDocument(uploadFileElement,pictureFileValue);
-
-
     }
 
     public void fillAddress(String addressValue) {
