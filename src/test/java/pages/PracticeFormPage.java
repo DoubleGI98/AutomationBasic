@@ -54,6 +54,7 @@ public class PracticeFormPage extends BasePage {
         fillPhoneNumber((String) practiceFormData.get("mobilePhoneText"));
         fillDateOfBirth((String) practiceFormData.get("monthValueText"), (String) practiceFormData.get("yearValueText"),
                 (String) practiceFormData.get("dayValueText"));
+
         chooseSubjects((String) practiceFormData.get("mathSubjectText"), (String) practiceFormData.get("physicsSubjectText"));
         elementMethods.scrollPageDown("200");
         chooseHobbies((String) practiceFormData.get("sportValueText"), (String) practiceFormData.get("readValueText"),
