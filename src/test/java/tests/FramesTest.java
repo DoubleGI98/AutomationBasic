@@ -25,7 +25,7 @@ public class FramesTest extends BaseTest{
         homePage.goToDesiredMenu(ALERTS_FRAMES_WINDOWS_MENU);
         CommonPage commonPage = new CommonPage(driver);
         commonPage.isPageLoaded();
-        commonPage.goToDesireSubMenu(FRAMES_SUBMENU);
+        commonPage.goToDesiredSubMenu(FRAMES_SUBMENU);
         FramesPage framesPage = new FramesPage(driver);
         propertyUtility= new PropertyUtility("FramesTest");
         framesPage.interactWithFrameOne(propertyUtility.getPropertyValue("expectedText"));

@@ -35,7 +35,7 @@ public class WebTableTest extends BaseTest {
         homePage.goToDesiredMenu(ELEMENTS_MENU);
         CommonPage commonPage=new CommonPage(driver);
         commonPage.isPageLoaded();
-        commonPage.goToDesireSubMenu(WEB_TABLE_SUBMENU);
+        commonPage.goToDesiredSubMenu(WEB_TABLE_SUBMENU);
         WebTablePage webTablePage=new WebTablePage(driver);
         propertyUtility = new PropertyUtility("WebTableTest");
         Map<String,Object> webTableEntryData = propertyUtility.getAllProperties();

@@ -27,7 +27,7 @@ public class WindowsTest extends BaseTest {
         homePage.goToDesiredMenu(ALERTS_FRAMES_WINDOWS_MENU);
         CommonPage commonPage=new CommonPage(driver);
         commonPage.isPageLoaded();
-        commonPage.goToDesireSubMenu(WINDOWS_SUBMENU );
+        commonPage.goToDesiredSubMenu(WINDOWS_SUBMENU );
         WindowsPage windowsPage=new WindowsPage(driver);
         propertyUtility= new PropertyUtility("WindowsTest");
         windowsPage.isPageLoaded();

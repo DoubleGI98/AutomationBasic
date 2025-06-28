@@ -29,7 +29,7 @@ public class PracticeFormTest extends BaseTest {
         homePage.goToDesiredMenu(FORMS_MENU);
         CommonPage commonPage= new CommonPage(driver);
         commonPage.isPageLoaded();
-        commonPage.goToDesireSubMenu(PRACTICE_FORM_SUBMENU);
+        commonPage.goToDesiredSubMenu(PRACTICE_FORM_SUBMENU);
         PracticeFormPage practiceFormPage=new PracticeFormPage(driver);
         propertyUtility = new PropertyUtility("PracticeFormTest");
         Map<String,Object> practiceFormTestData  = propertyUtility.getAllProperties();

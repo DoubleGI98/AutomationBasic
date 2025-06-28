@@ -115,7 +115,7 @@ public class ElementMethods {
     }
 
     public void uploadDocument(By locator, String pathValue){
-        String pictureFilePaths = "src/test/resources/picture/" + pathValue;
+        String pictureFilePaths = "src/test/resources/pictures/" + pathValue;
         File file = new File(pictureFilePaths);
         getElement(locator).sendKeys(file.getAbsolutePath());
     }

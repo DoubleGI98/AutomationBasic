@@ -29,7 +29,7 @@ public class AlertsTest extends BaseTest{
         homePage.goToDesiredMenu(ALERTS_FRAMES_WINDOWS_MENU);
         CommonPage commonPage = new CommonPage(driver);
         commonPage.isPageLoaded();
-        commonPage.goToDesireSubMenu(ALERTS_SUBMENU);
+        commonPage.goToDesiredSubMenu(ALERTS_SUBMENU);
         AlertsPage alertsPage = new AlertsPage(driver);
         alertsPage.isPageLoaded();
         alertsPage.interactWithFirstAlert();

@@ -21,7 +21,7 @@ public class DropTest extends BaseTest {
         homePage.goToDesiredMenu(INTERACTIONS_MENU);
         CommonPage commonPage=new CommonPage(driver);
         commonPage.isPageLoaded();
-        commonPage.goToDesireSubMenu(DROPPABLE_SUBMENU);
+        commonPage.goToDesiredSubMenu(DROPPABLE_SUBMENU);
         DroppablePage droppablePage=new DroppablePage(driver);
         droppablePage.isPageLoaded();
         droppablePage.pickAndDropElement();
